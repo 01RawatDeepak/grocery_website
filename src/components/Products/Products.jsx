@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Heading } from "../Heading/Heading";
 import { Cards } from "../Cards/Cards";
 import ProductsLists from "../ProductList/ProductList"; // ✅ correct import
-
+import Button from "../../components/Button/Button"
 export const Products = () => {
   const categories = ["All", "Fruits", "Vegetables", "Dairy", "SeaFood"];
   const [activeTab, setActiveTab] = useState("All");
@@ -39,9 +39,12 @@ export const Products = () => {
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-18">
-          {filteredProducts.map((product) => (
+          {filteredProducts.slice(0,8).map((product) => (
             <Cards key={product.id} {...product} />
           ))}
+        </div>
+        <div className="text-center mt-15">
+          <Button content="View All"></Button>
         </div>
       </div>
     </section>
