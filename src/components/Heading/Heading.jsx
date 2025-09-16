@@ -8,7 +8,7 @@ export const Heading = (props) => {
           <span className="text-orange-500">{props.highlight}</span>{props.heading}
         </h3>
 
-        <div className="w-34   h-1 bg-orange-300 mt-5 me-2 mb-5 ml-auto"></div>
+        <div className="w-34   h-1 bg-orange-300 md:mt-6 mt-3 ml-auto"></div>
       </div>
     </>
   );

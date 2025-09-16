@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { GoHeartFill } from "react-icons/go";
 import { HiMiniShoppingBag } from "react-icons/hi2";
 import { IoSearchOutline } from "react-icons/io5";
@@ -18,22 +18,31 @@ export const Navbar = () => {
   //   visbile =true;
   // }
   const [isVisible, setIsVisible] = useState(false);
+  const [isScroll, setIsScroll]= useState(false);
   const toggleMenu = () => {
     setIsVisible(!isVisible);
   };
+useEffect(()=>{
+
+  const handleScroll=()=>{
+    setIsScroll(window.scrollY>10)
+
+  }
+  window.addEventListener('scroll',handleScroll);
+},[]);
   // }
   return (
     <>
-      <header className="bg-white fixed top-0  right-0 left-0">
+      <header className={`bg-white fixed top-0  right-0 left-0 z-50 ${isScroll ? 'shadow-lg': 'shadow-none'}`}>
         <nav className="max-w-[1400px] md:h-[14vh] h-[10vh] px-10  items-center m-auto flex justify-between">
           {/* logo */}
           <a
             href="#"
             className="font-bold md:text-2xl lg:text-2xl xl:text-3xl text-xl text-black "
           >
-            <span class="text-orange-400">O</span>ne{" "}
-            <span class="text-orange-400 font-bold">M</span>in Gr
-            <span class="text-orange-400 font-bold">oc</span>ery
+            <span className="text-orange-400">O</span>ne{" "}
+            <span className="text-orange-400 font-bold">M</span>in Gr
+            <span className="text-orange-400 font-bold">oc</span>ery
           </a>
           {/* Desktop Menu Bar */}
           <ul className="lg:flex items-center md:gap-x-6 lg:gap-x-6 xl:gap-x-15 hidden">
@@ -118,7 +127,7 @@ export const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="fixed top-[10vh] left-0 right-0 bottom-0 z-40 flex justify-end  mt-10"
+            className="fixed top-[10vh] left-0 right-0 bottom-0 z-40 flex justify-end  mt-10 z-50"
             onClick={toggleMenu} // 👈 closes menu when clicking overlay
           >
             {/* Menu Box */}
