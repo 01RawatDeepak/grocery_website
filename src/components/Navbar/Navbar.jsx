@@ -6,6 +6,7 @@ import { IoSearchOutline } from "react-icons/io5";
 import { TbMenu2 } from "react-icons/tb";
 import { RxCross2 } from "react-icons/rx";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 export const Navbar = () => {
   // function mobileMenu(){
   // const mobileMenu= document.getElementById('mobileContainer');
@@ -36,14 +37,14 @@ useEffect(()=>{
       <header className={`bg-white fixed top-0  right-0 left-0 z-50 ${isScroll ? 'shadow-lg': 'shadow-none'}`}>
         <nav className="max-w-[1400px] md:h-[14vh] h-[10vh] px-10  items-center m-auto flex justify-between">
           {/* logo */}
-          <a
-            href="#"
+          <Link
+            to="/"
             className="font-bold md:text-2xl lg:text-2xl xl:text-3xl text-xl text-black "
           >
             <span className="text-orange-400">O</span>ne{" "}
             <span className="text-orange-400 font-bold">M</span>in Gr
             <span className="text-orange-400 font-bold">oc</span>ery
-          </a>
+          </Link>
           {/* Desktop Menu Bar */}
           <ul className="lg:flex items-center md:gap-x-6 lg:gap-x-6 xl:gap-x-15 hidden">
             <li>

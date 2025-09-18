@@ -1,6 +1,7 @@
 import React from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { LuCopyright } from "react-icons/lu";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
@@ -8,13 +9,13 @@ export const Footer = () => {
       <div className="max-w-[1400px] mx-auto px-10">
         <div className="flex flex-wrap  gap-y-12">
           <div className="flex-1 basis-[300px]">
-            <a
-              href="#"
+            <Link
+              to="/"
               className="font-bold md:text-2xl lg:text-2xl xl:text-3xl text-xl text-black "
             >
               Gr
               <span className="text-orange-400 font-bold">O</span>cify
-            </a>
+            </Link>
             <p className="text-zinc-600 mt-6 max-w-[350px]">
               Bred for a high content of beneficial substances. Our products are
               all fresh and healthy.

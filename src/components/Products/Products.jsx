@@ -3,6 +3,7 @@ import { Heading } from "../Heading/Heading";
 import { Cards } from "../Cards/Cards";
 import ProductsLists from "../ProductList/ProductList"; // ✅ correct import
 import Button from "../../components/Button/Button"
+import { Link } from "react-router-dom";
 export const Products = () => {
   const categories = ["All", "Fruits", "Vegetables", "Dairy", "SeaFood"];
   const [activeTab, setActiveTab] = useState("All");
@@ -44,7 +45,8 @@ export const Products = () => {
           ))}
         </div>
         <div className="text-center mt-15">
-          <Button content="View All"></Button>
+        
+          <Link to="/all-products" className="bg-gradient-to-b from bg-orange-400 to-bg-orange-500  text-white  px-8 py-3 rounded-lg text-lg hover:scale-105 hover:to-orange-600 transition-all duration-300 cursor-pointer">View All</Link>
         </div>
       </div>
     </section>
